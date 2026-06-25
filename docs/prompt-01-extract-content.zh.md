@@ -6,7 +6,7 @@
 请访问并分析这个网页：
 https://www.qiniu.com/activity/detail/68ac208628614a718ed2319c
 
-请将页面中的全部有效内容整理成 content.md，包括：
+请将页面中的全部有效内容整理成 content.zh.md，包括：
 1. 页面主题
 2. 目标用户
 3. 核心 CTA
@@ -26,5 +26,4 @@ https://www.qiniu.com/activity/detail/68ac208628614a718ed2319c
 - 可以重新分组，但不要遗漏内容
 - 标注哪些内容适合作为首屏重点，哪些适合作为次级信息
 - 输出 Markdown 文件结构
-
 
