@@ -7,7 +7,7 @@ const icons = [BriefcaseBusiness, Award, Rocket, BrainCircuit]
 
 export default function Highlights() {
   return (
-    <section id="highlights" className="section-pad bg-white">
+    <section id="highlights" className="section-pad section-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Why join"
@@ -21,8 +21,8 @@ export default function Highlights() {
             const Icon = icons[index]
             return (
               <Reveal key={item.label} delay={index * 80}>
-                <div className="shine-card group h-full rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-blue-200">
-                  <div className="mb-8 flex items-center justify-between">
+                <div className="card-ui card-ui-hover h-full rounded-[1.75rem] p-6">
+                  <div className="mb-7 flex items-center justify-between">
                     <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-qblue">
                       <Icon className="h-6 w-6" />
                     </div>
@@ -30,7 +30,7 @@ export default function Highlights() {
                   </div>
                   <p className="text-4xl font-semibold tracking-tight text-ink">{item.value}</p>
                   <h3 className="mt-3 text-lg font-semibold text-ink">{item.label}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-500">{item.detail}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-500">{item.detail}</p>
                 </div>
               </Reveal>
             )

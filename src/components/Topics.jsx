@@ -8,7 +8,7 @@ export default function Topics() {
   const [activeTopic, setActiveTopic] = useState(null)
 
   return (
-    <section id="topics" className="section-pad bg-slate-50">
+    <section id="topics" className="section-pad section-soft">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Challenge topics"
@@ -17,13 +17,15 @@ export default function Topics() {
           align="center"
         />
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {topics.map((topic, index) => (
             <Reveal key={topic.title} delay={index * 70}>
               <button
                 type="button"
                 onClick={() => setActiveTopic(topic)}
-                className="shine-card group flex h-full min-h-72 w-full flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-qblue hover:shadow-card"
+                className={`card-ui card-ui-hover flex h-full min-h-64 w-full flex-col rounded-[1.75rem] p-5 text-left ${
+                  index === 0 ? 'lg:col-span-2 lg:min-h-64' : ''
+                }`}
               >
                 <div className="mb-5 flex items-center justify-between">
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
@@ -31,8 +33,10 @@ export default function Topics() {
                   </span>
                   <Layers3 className="h-5 w-5 text-qblue" />
                 </div>
-                <h3 className="text-xl font-semibold leading-7 text-ink">{topic.title}</h3>
-                <p className="mt-4 flex-1 text-sm leading-7 text-slate-500">{topic.summary}</p>
+                <h3 className={`${index === 0 ? 'lg:text-3xl lg:leading-10' : 'text-xl leading-7'} font-semibold text-ink`}>
+                  {topic.title}
+                </h3>
+                <p className="mt-4 flex-1 text-sm leading-7 text-slate-500 md:text-base md:leading-8">{topic.summary}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-qblue">
                   查看详情
                   <ExternalLink className="h-4 w-4" />
@@ -45,7 +49,7 @@ export default function Topics() {
 
       {activeTopic && (
         <div className="fixed inset-0 z-[70] grid place-items-center bg-slate-950/40 p-4 backdrop-blur-sm">
-          <div className="max-h-[86vh] w-full max-w-2xl overflow-auto rounded-[2rem] bg-white p-6 shadow-2xl md:p-8">
+          <div className="max-h-[86vh] w-full max-w-2xl overflow-auto rounded-[1.75rem] bg-white p-6 shadow-2xl md:p-8">
             <div className="mb-5 flex items-start justify-between gap-6">
               <div>
                 <p className="mb-2 text-sm font-semibold text-qblue">{activeTopic.tag}</p>

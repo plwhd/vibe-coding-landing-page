@@ -5,7 +5,7 @@ import SectionHeader from './SectionHeader.jsx'
 
 export default function JoinQiniu() {
   return (
-    <section id="join" className="section-pad bg-slate-50">
+    <section id="join" className="section-pad section-soft">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
@@ -17,7 +17,7 @@ export default function JoinQiniu() {
             <div className="grid gap-3">
               {qiniu.reasons.map((reason, index) => (
                 <Reveal key={reason} delay={index * 60}>
-                  <div className="flex items-center gap-3 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+                  <div className="card-ui flex items-center gap-3 rounded-3xl p-4">
                     <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-blue-50 text-sm font-bold text-qblue">
                       {index + 1}
                     </span>
@@ -29,7 +29,7 @@ export default function JoinQiniu() {
           </div>
 
           <Reveal delay={120}>
-            <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-card">
+            <div className="card-ui overflow-hidden rounded-[1.75rem]">
               <div className="relative aspect-video bg-slate-900">
                 <video className="h-full w-full object-cover" controls preload="metadata">
                   <source src={qiniu.video} type="video/mp4" />
@@ -42,7 +42,7 @@ export default function JoinQiniu() {
               </div>
               <div className="grid gap-3 p-5 sm:grid-cols-2">
                 {qiniu.stats.map(([value, label]) => (
-                  <div key={value} className="rounded-3xl bg-slate-50 p-4">
+                  <div key={value} className="subtle-panel rounded-3xl p-4">
                     <div className="mb-3 flex items-center gap-2 text-qblue">
                       {value.includes('AI') ? <Sparkles className="h-4 w-4" /> : <Building2 className="h-4 w-4" />}
                       <span className="text-sm font-semibold">{label}</span>

@@ -5,7 +5,7 @@ import SectionHeader from './SectionHeader.jsx'
 
 export default function Winners() {
   return (
-    <section id="winners" className="section-pad bg-white">
+    <section id="winners" className="section-pad section-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Winners"
@@ -15,8 +15,8 @@ export default function Winners() {
         />
 
         <Reveal>
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-card">
-            <div className="grid grid-cols-[0.7fr_1fr_1.5fr] gap-4 bg-ink px-5 py-4 text-sm font-semibold text-white md:px-7">
+          <div className="card-ui overflow-hidden rounded-[1.75rem]">
+            <div className="grid grid-cols-[0.7fr_1fr_1.5fr] gap-4 bg-slate-950 px-5 py-4 text-sm font-semibold text-white md:px-7">
               <span>奖项</span>
               <span>队伍名称</span>
               <span>议题方向</span>

@@ -1,7 +1,9 @@
 export const activity = {
   title: '2026 七牛校招季',
+  themeLine: 'AI 项目实战挑战赛',
   eyebrow: '产研专场盛启',
   subtitle: 'SSP Offer + 50000 奖金，等一个来搞事的你',
+  proposition: '面向云计算、AI、开发者和校园招聘的项目实战挑战。用作品证明实力，拿 Offer，赢奖金。',
   target: '国内外院校 2024-2026 届毕业生，及在读学生均可参加',
   targetNote: '中国大陆以毕业证为准，中国港澳台及海外以学位证为准',
   period: '2025.09.08 - 2025.12.31',
@@ -12,6 +14,12 @@ export const activity = {
   secondaryCta: '查看实战议题',
   sourceUrl: 'https://www.qiniu.com/activity/detail/68ac208628614a718ed2319c'
 }
+
+export const heroMetrics = [
+  { value: 'SSP', label: '高潜 Offer', detail: '路演式终面，优秀项目优先评定' },
+  { value: '¥50,000', label: '最高奖金', detail: '一等奖项目奖金，能力至上' },
+  { value: '100+', label: 'Offer 开放', detail: '覆盖研发、产品、AI、解决方案等方向' }
+]
 
 export const navItems = [
   { label: '亮点', href: '#highlights' },
@@ -138,13 +146,13 @@ export const jobs = [
 ]
 
 export const timeline = [
-  { step: '01', title: '上传简历并报名', time: '即日起', detail: '提交 PDF 简历并填写投递信息' },
-  { step: '02', title: '收到回执通知', time: '2 日内', detail: '未收到可在校招群联系牛小七' },
-  { step: '03', title: '解锁实战议题', time: '第一批 9.22 / 第二批 10.20', detail: '选择方向，开始项目创作' },
-  { step: '04', title: '提交作品成果', time: '第一批 9.28 / 第二批 10.26', detail: '提交代码、文档、Demo 视频' },
-  { step: '05', title: '路演式终面', time: '10 月上旬 / 11 月上旬', detail: '以作品路演完成终面' },
-  { step: '06', title: 'Offer 发放', time: '10 月中旬 / 11 月中旬', detail: '优秀项目优先评定' },
-  { step: '07', title: '获奖公布', time: '10 月中旬 / 11 月中旬', detail: '同步公布项目奖项' }
+  { step: '01', title: '上传简历并报名', phase: '报名', batchOne: '即日起', batchTwo: '即日起', detail: '提交 PDF 简历并填写投递信息' },
+  { step: '02', title: '收到回执通知', phase: '确认', batchOne: '2 日内', batchTwo: '2 日内', detail: '未收到可在校招群联系牛小七' },
+  { step: '03', title: '解锁实战议题', phase: '创作', batchOne: '9.22 00:00', batchTwo: '10.20 00:00', detail: '选择方向，开始项目创作' },
+  { step: '04', title: '提交作品成果', phase: '提交', batchOne: '9.28 23:59', batchTwo: '10.26 23:59', detail: '提交代码、文档、Demo 视频' },
+  { step: '05', title: '路演式终面', phase: '终面', batchOne: '10 月上旬', batchTwo: '11 月上旬', detail: '以作品路演完成终面' },
+  { step: '06', title: 'Offer 发放', phase: '结果', batchOne: '10 月中旬', batchTwo: '11 月中旬', detail: '优秀项目优先评定' },
+  { step: '07', title: '获奖公布', phase: '公布', batchOne: '10 月中旬', batchTwo: '11 月中旬', detail: '同步公布项目奖项' }
 ]
 
 export const topics = [

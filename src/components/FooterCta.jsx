@@ -5,7 +5,7 @@ import Reveal from './Reveal.jsx'
 
 export default function FooterCta({ onSignup }) {
   return (
-    <footer id="contact" className="bg-ink text-white">
+    <footer id="contact" className="bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -34,7 +34,7 @@ export default function FooterCta({ onSignup }) {
 
             <div className="grid gap-4 sm:grid-cols-3">
               {qrCodes.map((code) => (
-                <div key={code.label} className="rounded-[1.5rem] bg-white p-4 text-center text-ink">
+                <div key={code.label} className="rounded-[1.35rem] bg-white p-4 text-center text-ink shadow-sm">
                   <img
                     src={code.image}
                     alt={code.label}
