@@ -11,7 +11,7 @@ export default function JoinQiniu() {
           <div>
             <SectionHeader
               eyebrow="Join Qiniu"
-              title="加入七牛，从云到 AI 到具身智能"
+              title="加入七牛"
               description={qiniu.description}
             />
             <div className="grid gap-3">
@@ -30,7 +30,7 @@ export default function JoinQiniu() {
 
           <Reveal delay={120}>
             <div className="card-ui overflow-hidden rounded-[1.75rem]">
-              <div className="relative aspect-video bg-slate-900">
+              <div className="relative aspect-video bg-[#123E8A]">
                 <video className="h-full w-full object-cover" controls preload="metadata">
                   <source src={qiniu.video} type="video/mp4" />
                   您的浏览器不支持视频播放。

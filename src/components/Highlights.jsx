@@ -11,8 +11,8 @@ export default function Highlights() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Why join"
-          title="不是普通笔试，是一次能被看见的 AI 项目实战"
-          description="把校招筛选变成真实项目挑战，岗位、奖金、Offer 与前沿技术方向同时摆在台面上。"
+          title="AI 实战挑战"
+          description="用真实项目参与校招筛选，岗位、奖金、Offer 与前沿技术方向同步展开。"
           align="center"
         />
 

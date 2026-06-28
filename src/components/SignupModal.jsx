@@ -8,7 +8,7 @@ export default function SignupModal({ open, onClose }) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-[80] overflow-y-auto bg-slate-950/45 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[80] overflow-y-auto bg-[#173B6B]/40 p-4 backdrop-blur-sm">
       <div className="mx-auto my-8 max-w-3xl overflow-hidden rounded-[2rem] bg-white shadow-2xl">
         <div className="flex items-start justify-between gap-6 border-b border-slate-100 p-6">
           <div>
@@ -60,7 +60,7 @@ export default function SignupModal({ open, onClose }) {
                 type="file"
                 accept=".pdf,application/pdf"
                 onChange={(event) => setFileName(event.target.files?.[0]?.name ?? '')}
-                className="block w-full text-sm text-slate-600 file:mr-4 file:rounded-full file:border-0 file:bg-ink file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
+                className="block w-full text-sm text-slate-600 file:mr-4 file:rounded-full file:border-0 file:bg-qblue file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white"
               />
               {fileName && <span className="text-sm text-qblue">{fileName}</span>}
             </div>
@@ -72,7 +72,7 @@ export default function SignupModal({ open, onClose }) {
 
           <button
             type="submit"
-            className="min-h-12 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-950 active:scale-[0.98]"
+            className="min-h-12 rounded-full bg-qblue px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0F66D9] active:scale-[0.98]"
           >
             提交报名信息
           </button>

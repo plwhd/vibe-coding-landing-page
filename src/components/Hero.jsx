@@ -1,9 +1,9 @@
-import { ArrowDown, Bot, CalendarDays, CheckCircle2, MapPin, Sparkles, UploadCloud, Users } from 'lucide-react'
+import { ArrowDown, CalendarDays, CheckCircle2, MapPin, Sparkles, UploadCloud, Users } from 'lucide-react'
 import { activity, heroMetrics } from '../data/activity.js'
 import CtaButton from './CtaButton.jsx'
 
 const quickFacts = [
-  { icon: Users, label: '面向对象', value: '2024-2026 届学生' },
+  { icon: Users, label: '面向对象', value: activity.target, featured: true },
   { icon: CalendarDays, label: '报名截止', value: activity.applyDeadline },
   { icon: MapPin, label: '活动地点', value: activity.location }
 ]
@@ -25,7 +25,7 @@ export default function Hero({ onSignup }) {
         ))}
       </div>
 
-      <div className="relative mx-auto grid min-h-[88vh] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1fr_25rem] lg:px-8">
+      <div className="relative mx-auto grid min-h-[86vh] max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.03fr_0.97fr] lg:px-8">
         <div>
           <div className="mb-6 flex flex-wrap items-center gap-3">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-semibold text-qblue shadow-sm backdrop-blur">
@@ -47,22 +47,6 @@ export default function Hero({ onSignup }) {
           <p className="mt-6 max-w-3xl text-balance text-xl font-semibold leading-8 text-ink md:text-3xl md:leading-10">
             {activity.subtitle}
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
-            {activity.proposition}
-          </p>
-
-          <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
-            {heroMetrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="metric-card rounded-[1.35rem] p-4"
-              >
-                <p className="text-3xl font-semibold tracking-tight text-ink md:text-4xl">{metric.value}</p>
-                <p className="mt-2 text-sm font-semibold text-qblue">{metric.label}</p>
-                <p className="mt-2 text-xs leading-5 text-slate-500">{metric.detail}</p>
-              </div>
-            ))}
-          </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CtaButton onClick={onSignup} className="sm:min-w-56">
@@ -73,48 +57,37 @@ export default function Hero({ onSignup }) {
               {activity.secondaryCta}
             </CtaButton>
           </div>
+        </div>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
-            {quickFacts.map((fact) => (
+        <div className="grid gap-4">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            {heroMetrics.map((metric) => (
               <div
-                key={fact.label}
-                className="rounded-2xl border border-white/80 bg-white/62 p-4 shadow-sm backdrop-blur"
+                key={metric.label}
+                className="metric-card rounded-[1.1rem] p-3 sm:rounded-[1.35rem] sm:p-4"
               >
-                <fact.icon className="mb-3 h-5 w-5 text-qblue" />
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-                  {fact.label}
-                </p>
-                <p className="mt-1 text-base font-semibold text-ink">{fact.value}</p>
+                <p className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl md:text-4xl">{metric.value}</p>
+                <p className="mt-2 text-xs font-semibold text-qblue sm:text-sm">{metric.label}</p>
+                <p className="mt-2 hidden text-xs leading-5 text-slate-500 sm:block">{metric.detail}</p>
               </div>
             ))}
           </div>
-        </div>
 
-        <div className="hidden lg:block">
-          <div className="mission-panel float-slow">
-            <div className="flex items-center gap-3">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-qblue text-white">
-                <Bot className="h-6 w-6" />
+          <div className="grid gap-2 sm:grid-cols-2 sm:gap-3">
+            {quickFacts.map((fact) => (
+              <div
+                key={fact.label}
+                className={`rounded-2xl border border-white/80 bg-white/62 p-3 shadow-sm backdrop-blur sm:p-4 ${
+                  fact.featured ? 'sm:col-span-2' : ''
+                }`}
+              >
+                <fact.icon className="mb-2 h-4 w-4 text-qblue sm:mb-3 sm:h-5 sm:w-5" />
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400 sm:text-xs">
+                  {fact.label}
+                </p>
+                <p className="mt-1 text-sm font-semibold leading-6 text-ink sm:text-base">{fact.value}</p>
               </div>
-              <div>
-                <p className="text-sm font-semibold text-ink">AI 实战任务栈</p>
-                <p className="text-xs text-slate-500">3D / LLM / Robot / Voice</p>
-              </div>
-            </div>
-            <div className="mt-6 space-y-3">
-              {['生成式 3D 模型', '角色扮演语音对话', '嵌入式智能小车', '语音控制电脑'].map((item, index) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/80 p-3">
-                  <span className="grid h-8 w-8 place-items-center rounded-xl bg-slate-100 text-sm font-bold text-qblue">
-                    {index + 1}
-                  </span>
-                  <span className="text-sm font-medium text-slate-700">{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 rounded-2xl bg-slate-950 p-4 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">实战通道</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">报名后进入议题创作、作品提交与路演式终面。</p>
-            </div>
+            ))}
           </div>
         </div>
       </div>

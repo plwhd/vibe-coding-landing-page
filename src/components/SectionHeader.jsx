@@ -10,7 +10,7 @@ export default function SectionHeader({ eyebrow, title, description, align = 'le
           {eyebrow}
         </p>
       )}
-      <h2 className="text-balance text-3xl font-semibold leading-tight text-ink md:text-5xl">
+      <h2 className="text-balance text-3xl font-semibold leading-tight text-ink md:text-[2.75rem] md:leading-[1.12]">
         {title}
       </h2>
       {description && (
