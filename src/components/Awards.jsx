@@ -42,19 +42,17 @@ export default function Awards() {
         </div>
 
         <Reveal className="mt-5">
-          <div className="rounded-[1.35rem] border border-blue-100 bg-blue-50/65 p-4 md:p-5">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-qblue">
-                  Bonus resources
-                </p>
-                <h3 className="mt-2 text-xl font-semibold text-ink">{referral.title}</h3>
-              </div>
-              <CtaButton href={referral.url} variant="secondary">{referral.action}</CtaButton>
-            </div>
-            <div className="mt-3">
-              <p className="text-sm leading-6 text-slate-600 lg:whitespace-nowrap">{referral.description}</p>
+          <div className="grid gap-4 rounded-[1.35rem] border border-blue-100 bg-blue-50/65 p-4 md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-5">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-qblue">
+                Bonus resources
+              </p>
+              <h3 className="mt-2 text-xl font-semibold text-ink">{referral.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">{referral.description}</p>
               <p className="mt-1 text-sm leading-6 text-slate-600">{referral.invite}</p>
+            </div>
+            <div className="md:text-right">
+              <CtaButton href={referral.url} variant="secondary">{referral.action}</CtaButton>
             </div>
           </div>
         </Reveal>

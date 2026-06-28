@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { navItems } from '../data/activity.js'
-import logo from '../../image/logo.png'
+import { activity, navItems } from '../data/activity.js'
+import CtaButton from './CtaButton.jsx'
 
-export default function Navbar() {
+export default function Navbar({ onSignup }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -24,10 +24,12 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3" onClick={close}>
-          <img src={logo} alt="七牛云" className="h-9 w-9 rounded-xl object-contain" />
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-qblue text-sm font-bold text-white">
+            Q
+          </span>
           <span className="leading-tight">
             <span className="block text-sm font-semibold text-ink">七牛云校招</span>
-            <span className="block text-xs text-slate-500">AI 项目实战挑战</span>
+            <span className="block text-xs text-slate-500">{activity.stockCode}</span>
           </span>
         </a>
 
@@ -41,6 +43,10 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+        </div>
+
+        <div className="hidden md:block">
+          <CtaButton onClick={onSignup}>{activity.primaryCta}</CtaButton>
         </div>
 
         <button
@@ -66,6 +72,9 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
+            <CtaButton onClick={() => { close(); onSignup() }} className="mt-2 w-full">
+              {activity.primaryCta}
+            </CtaButton>
           </div>
         </div>
       )}

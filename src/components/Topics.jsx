@@ -12,18 +12,18 @@ export default function Topics() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Challenge topics"
-          title="议题介绍"
+          title="五个实战议题"
           description="每个议题都要求清晰的用户思考、模型或硬件选型、工程实现和说明文档。"
           align="center"
         />
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {topics.map((topic, index) => (
             <Reveal key={topic.title} delay={index * 70}>
               <button
                 type="button"
                 onClick={() => setActiveTopic(topic)}
-                className="card-ui card-ui-hover flex h-full w-full flex-col rounded-[1.35rem] p-5 text-left"
+                className="card-ui card-ui-hover flex h-full min-h-48 w-full flex-col rounded-[1.35rem] p-4 text-left"
               >
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-qblue">
@@ -32,7 +32,7 @@ export default function Topics() {
                   <Layers3 className="h-5 w-5 text-qblue" />
                 </div>
                 <h3 className="text-lg font-semibold leading-7 text-ink">{topic.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-7 text-slate-500">{topic.summary}</p>
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-500">{topic.summary}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-qblue">
                   查看详情
                   <ExternalLink className="h-4 w-4" />

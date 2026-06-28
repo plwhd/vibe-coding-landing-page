@@ -25,13 +25,13 @@ export default function Winners() {
               {winners.map(([award, team, topic], index) => (
                 <div
                   key={`${award}-${team}`}
-                  className={`grid grid-cols-1 gap-2 px-5 py-4 text-sm transition md:grid-cols-[0.7fr_1fr_1.5fr] md:items-center md:gap-4 md:px-7 ${rowTone(award)}`}
+                  className="grid grid-cols-1 gap-2 px-5 py-4 text-sm transition hover:bg-blue-50/60 md:grid-cols-[0.7fr_1fr_1.5fr] md:items-center md:gap-4 md:px-7"
                 >
                   <span className={`inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 font-semibold ${awardTone(award)}`}>
-                    <Trophy className={`h-4 w-4 ${iconTone(award)}`} />
+                    <Trophy className={`h-4 w-4 ${index < 1 ? 'text-sun' : 'text-qblue'}`} />
                     {award}
                   </span>
-                  <span className={`font-semibold text-ink ${index < 3 ? 'text-base' : ''}`}>{team}</span>
+                  <span className="font-semibold text-ink">{team}</span>
                   <span className="leading-6 text-slate-600">{topic}</span>
                 </div>
               ))}
@@ -44,21 +44,8 @@ export default function Winners() {
 }
 
 function awardTone(award) {
-  if (award === '一等奖') return 'border-amber-300 bg-amber-100 text-amber-800 shadow-sm'
-  if (award === '二等奖') return 'border-blue-200 bg-blue-100 text-qblue'
+  if (award === '一等奖') return 'border-amber-200 bg-amber-50 text-amber-700'
+  if (award === '二等奖') return 'border-blue-200 bg-blue-50 text-qblue'
   if (award === '三等奖') return 'border-emerald-200 bg-emerald-50 text-emerald-700'
   return 'border-slate-200 bg-slate-50 text-slate-600'
-}
-
-function rowTone(award) {
-  if (award === '一等奖') return 'bg-amber-50/70 hover:bg-amber-50'
-  if (award === '二等奖') return 'bg-blue-50/55 hover:bg-blue-50'
-  return 'hover:bg-blue-50/60'
-}
-
-function iconTone(award) {
-  if (award === '一等奖') return 'text-sun'
-  if (award === '二等奖') return 'text-qblue'
-  if (award === '三等奖') return 'text-emerald-600'
-  return 'text-slate-500'
 }

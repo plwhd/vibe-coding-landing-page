@@ -10,7 +10,7 @@ export default function Rules() {
         <SectionHeader
           eyebrow="Rules"
           title="评审透明，提交标准清晰"
-          description="评审重点：产品的用户价值，工程的扎实实现。"
+          description="评审重点不是单纯炫技，而是产品是否有用户价值，以及工程实现是否扎实。"
         />
 
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">

@@ -3,7 +3,7 @@ import { activity, heroMetrics } from '../data/activity.js'
 import CtaButton from './CtaButton.jsx'
 
 const quickFacts = [
-  { icon: Users, label: '面向对象', value: activity.target, featured: true },
+  { icon: Users, label: '面向对象', value: '2024-2026 届学生' },
   { icon: CalendarDays, label: '报名截止', value: activity.applyDeadline },
   { icon: MapPin, label: '活动地点', value: activity.location }
 ]
@@ -73,19 +73,17 @@ export default function Hero({ onSignup }) {
             ))}
           </div>
 
-          <div className="grid gap-2 sm:grid-cols-2 sm:gap-3">
+          <div className="grid gap-2 sm:grid-cols-3 sm:gap-3">
             {quickFacts.map((fact) => (
               <div
                 key={fact.label}
-                className={`rounded-2xl border border-white/80 bg-white/62 p-3 shadow-sm backdrop-blur sm:p-4 ${
-                  fact.featured ? 'sm:col-span-2' : ''
-                }`}
+                className="rounded-2xl border border-white/80 bg-white/62 p-3 shadow-sm backdrop-blur sm:p-4"
               >
                 <fact.icon className="mb-2 h-4 w-4 text-qblue sm:mb-3 sm:h-5 sm:w-5" />
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400 sm:text-xs">
                   {fact.label}
                 </p>
-                <p className="mt-1 text-sm font-semibold leading-6 text-ink sm:text-base">{fact.value}</p>
+                <p className="mt-1 text-sm font-semibold text-ink sm:text-base">{fact.value}</p>
               </div>
             ))}
           </div>
