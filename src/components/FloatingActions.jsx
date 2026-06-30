@@ -8,14 +8,14 @@ export default function FloatingActions({ onSignup }) {
         <button
           type="button"
           onClick={onSignup}
-          className="group flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-1"
+          className="group flex items-center gap-2 rounded-2xl bg-qblue px-4 py-3 text-xs font-semibold text-white transition hover:bg-[#ad081b]"
         >
           <UploadCloud className="h-4 w-4" />
           上传简历
         </button>
         <a
           href="#contact"
-          className="group flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-ink shadow-sm transition hover:-translate-y-1 hover:border-qblue hover:text-qblue"
+          className="group flex items-center gap-2 rounded-2xl bg-sand px-4 py-3 text-xs font-semibold text-ink transition hover:bg-[#d8d8d1]"
         >
           <MessageCircle className="h-4 w-4" />
           扫码进群
@@ -24,18 +24,18 @@ export default function FloatingActions({ onSignup }) {
           href={referral.url}
           target="_blank"
           rel="noreferrer"
-          className="group flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-ink shadow-sm transition hover:-translate-y-1 hover:border-qblue hover:text-qblue"
+          className="group flex items-center gap-2 rounded-2xl bg-sand px-4 py-3 text-xs font-semibold text-ink transition hover:bg-[#d8d8d1]"
         >
           <Gift className="h-4 w-4" />
           算力好礼
         </a>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/92 p-3 shadow-[0_-12px_30px_rgba(15,23,42,0.08)] backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-warmline bg-white/95 p-3 backdrop-blur md:hidden">
         <button
           type="button"
           onClick={onSignup}
-          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white"
+          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-qblue px-5 py-3 text-sm font-semibold text-white"
         >
           <UploadCloud className="h-4 w-4" />
           上传简历并报名

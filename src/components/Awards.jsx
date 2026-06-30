@@ -15,35 +15,35 @@ export default function Awards() {
           align="center"
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {awards.map((award, index) => (
             <Reveal key={award.title} delay={index * 70}>
-              <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1">
-                <div className={`absolute inset-x-0 top-0 h-2 bg-gradient-to-r ${award.tone}`} />
+              <div className="relative overflow-hidden rounded-[28px] border border-warmline bg-warm p-5 transition duration-200 hover:border-silver">
+                <div className={`absolute inset-x-0 top-0 h-2 ${index === 0 ? 'bg-qblue' : index === 1 ? 'bg-darkwarm' : index === 2 ? 'bg-mint' : 'bg-silver'}`} />
                 <div className="mb-8 flex items-center justify-between">
-                  <div className={`grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br ${award.tone} text-white`}>
+                  <div className="grid h-12 w-12 place-items-center rounded-[20px] bg-white text-qblue">
                     <Medal className="h-6 w-6" />
                   </div>
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-600">
+                  <span className="rounded-2xl bg-sand px-3 py-1 text-sm font-semibold text-olive">
                     {award.count}
                   </span>
                 </div>
                 <h3 className="text-lg font-semibold text-ink">{award.title}</h3>
-                <p className="mt-3 text-4xl font-semibold tracking-tight text-ink">{award.prize}</p>
+                <p className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-ink">{award.prize}</p>
               </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal className="mt-6">
-          <div className="grid gap-6 rounded-[2rem] border border-blue-100 bg-blue-50/70 p-6 md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-8">
+          <div className="grid gap-6 rounded-[32px] border border-warmline bg-sand p-6 md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-8">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-qblue">
+              <p className="text-xs font-semibold uppercase tracking-normal text-qblue">
                 Bonus resources
               </p>
               <h3 className="mt-3 text-2xl font-semibold text-ink">{referral.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{referral.description}</p>
-              <p className="mt-2 text-sm leading-7 text-slate-600">{referral.invite}</p>
+              <p className="mt-3 text-sm leading-7 text-olive">{referral.description}</p>
+              <p className="mt-2 text-sm leading-7 text-olive">{referral.invite}</p>
             </div>
             <div className="md:text-right">
               <CtaButton href={referral.url} variant="secondary">{referral.action}</CtaButton>

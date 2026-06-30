@@ -2,11 +2,11 @@ import { ArrowRight } from 'lucide-react'
 
 export default function CtaButton({ children, variant = 'primary', href, onClick, className = '' }) {
   const base =
-    'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-200 active:scale-[0.98]'
+    'group inline-flex min-h-10 items-center justify-center gap-2 rounded-2xl border-2 px-4 py-2 text-xs font-semibold transition duration-200 focus:outline-none focus:ring-4 focus:ring-[#435ee5]/25 active:scale-[0.98]'
   const styles =
     variant === 'primary'
-      ? 'bg-ink text-white shadow-glow hover:-translate-y-0.5 hover:bg-slate-950'
-      : 'border border-slate-200 bg-white/80 text-ink shadow-sm backdrop-blur hover:-translate-y-0.5 hover:border-qblue hover:text-qblue'
+      ? 'border-transparent bg-qblue text-white hover:bg-[#ad081b]'
+      : 'border-transparent bg-sand text-ink hover:bg-[#d8d8d1]'
 
   if (href) {
     return (

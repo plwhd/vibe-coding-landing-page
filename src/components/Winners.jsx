@@ -15,24 +15,24 @@ export default function Winners() {
         />
 
         <Reveal>
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-card">
-            <div className="grid grid-cols-[0.7fr_1fr_1.5fr] gap-4 bg-ink px-5 py-4 text-sm font-semibold text-white md:px-7">
+          <div className="overflow-hidden rounded-[28px] border border-warmline bg-white">
+            <div className="grid grid-cols-[0.7fr_1fr_1.5fr] gap-4 bg-sand px-5 py-4 text-sm font-semibold text-ink md:px-7">
               <span>奖项</span>
               <span>队伍名称</span>
               <span>议题方向</span>
             </div>
-            <div className="divide-y divide-slate-100">
+            <div className="divide-y divide-warmline">
               {winners.map(([award, team, topic], index) => (
                 <div
                   key={`${award}-${team}`}
-                  className="grid grid-cols-1 gap-2 px-5 py-4 text-sm transition hover:bg-blue-50/60 md:grid-cols-[0.7fr_1fr_1.5fr] md:gap-4 md:px-7"
+                  className="grid grid-cols-1 gap-2 px-5 py-4 text-sm transition hover:bg-warm md:grid-cols-[0.7fr_1fr_1.5fr] md:gap-4 md:px-7"
                 >
-                  <span className="inline-flex w-fit items-center gap-2 rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-700">
+                  <span className="inline-flex w-fit items-center gap-2 rounded-2xl bg-warm px-3 py-1 font-semibold text-olive">
                     <Trophy className={`h-4 w-4 ${index < 1 ? 'text-sun' : 'text-qblue'}`} />
                     {award}
                   </span>
                   <span className="font-semibold text-ink">{team}</span>
-                  <span className="leading-6 text-slate-600">{topic}</span>
+                  <span className="leading-6 text-olive">{topic}</span>
                 </div>
               ))}
             </div>

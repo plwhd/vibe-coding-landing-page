@@ -4,19 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#111827',
-        qblue: '#126BFF',
-        cyanline: '#18B6D9',
-        mint: '#3ED6A2',
-        sun: '#F8B94A'
+        ink: '#211922',
+        qblue: '#e60023',
+        cyanline: '#7e238b',
+        mint: '#103c25',
+        sun: '#f8b94a',
+        sand: '#e5e5e0',
+        warm: '#f6f6f3',
+        warmline: '#c8c8c1',
+        olive: '#62625b',
+        silver: '#91918c',
+        darkwarm: '#33332e'
       },
       boxShadow: {
-        glow: '0 24px 80px rgba(18, 107, 255, 0.16)',
-        card: '0 18px 50px rgba(15, 23, 42, 0.08)'
+        glow: '0 10px 24px rgba(33, 25, 34, 0.08)',
+        card: '0 8px 22px rgba(33, 25, 34, 0.08)'
       },
       fontFamily: {
         sans: [
-          'Inter',
+          'Pin Sans',
           'ui-sans-serif',
           'system-ui',
           '-apple-system',

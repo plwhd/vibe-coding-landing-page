@@ -21,16 +21,16 @@ export default function Highlights() {
             const Icon = icons[index]
             return (
               <Reveal key={item.label} delay={index * 80}>
-                <div className="shine-card group h-full rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-blue-200">
-                  <div className="mb-8 flex items-center justify-between">
-                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-qblue">
+                <div className="group h-full rounded-[28px] border border-warmline bg-warm p-5 transition duration-200 hover:border-silver">
+                  <div className="mb-7 flex items-center justify-between">
+                    <div className="grid h-12 w-12 place-items-center rounded-[20px] bg-white text-qblue">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <span className="text-xs font-semibold text-slate-400">0{index + 1}</span>
+                    <span className="rounded-2xl bg-sand px-3 py-1 text-xs font-semibold text-olive">0{index + 1}</span>
                   </div>
-                  <p className="text-4xl font-semibold tracking-tight text-ink">{item.value}</p>
+                  <p className="text-4xl font-semibold tracking-[-0.04em] text-ink">{item.value}</p>
                   <h3 className="mt-3 text-lg font-semibold text-ink">{item.label}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-500">{item.detail}</p>
+                  <p className="mt-3 text-sm leading-7 text-olive">{item.detail}</p>
                 </div>
               </Reveal>
             )

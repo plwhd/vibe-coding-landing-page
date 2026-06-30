@@ -1,5 +1,5 @@
-import { ArrowDown, Bot, CalendarDays, MapPin, Sparkles, UploadCloud, Users } from 'lucide-react'
-import { activity } from '../data/activity.js'
+import { ArrowDown, CalendarDays, MapPin, Sparkles, UploadCloud, Users } from 'lucide-react'
+import { activity, highlights, topics } from '../data/activity.js'
 import CtaButton from './CtaButton.jsx'
 
 const quickFacts = [
@@ -8,97 +8,119 @@ const quickFacts = [
   { icon: MapPin, label: '活动地点', value: activity.location }
 ]
 
+const pinCards = [
+  {
+    title: highlights[1].value,
+    caption: highlights[1].label,
+    className: 'h-44 bg-qblue text-white'
+  },
+  {
+    title: 'SSP',
+    caption: '项目路演终面',
+    className: 'h-36 bg-sand text-ink'
+  },
+  {
+    title: topics[1].tag,
+    caption: topics[1].title,
+    className: 'h-52 bg-[#f7dfe4] text-ink'
+  },
+  {
+    title: highlights[0].value,
+    caption: highlights[0].label,
+    className: 'h-40 bg-mint text-white'
+  },
+  {
+    title: topics[0].tag,
+    caption: topics[0].title,
+    className: 'h-56 bg-[#f6f6f3] text-ink'
+  },
+  {
+    title: 'AI',
+    caption: '3D / LLM / Robot / Voice',
+    className: 'h-36 bg-darkwarm text-white'
+  }
+]
+
 export default function Hero({ onSignup }) {
   return (
     <section id="top" className="hero-surface relative overflow-hidden pt-16">
       <div className="mesh-grid absolute inset-0" />
       <div className="particle-field absolute inset-0" aria-hidden="true">
-        {Array.from({ length: 26 }).map((_, index) => (
+        {Array.from({ length: 18 }).map((_, index) => (
           <span
             key={index}
             style={{
-              left: `${(index * 37) % 96}%`,
-              top: `${((index * 53) % 82) + 8}%`,
-              animationDelay: `${index * 0.18}s`
+              left: `${(index * 41) % 96}%`,
+              top: `${((index * 47) % 78) + 10}%`,
+              animationDelay: `${index * 0.16}s`
             }}
           />
         ))}
       </div>
 
-      <div className="relative mx-auto flex min-h-[86vh] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8">
-        <div className="max-w-5xl">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/75 px-4 py-2 text-sm font-semibold text-qblue shadow-sm backdrop-blur">
+      <div className="relative mx-auto grid min-h-[86vh] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
+        <div className="max-w-4xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-2xl bg-[hsla(60,20%,98%,.7)] px-3 py-2 text-xs font-semibold text-qblue">
             <Sparkles className="h-4 w-4" />
             {activity.eyebrow}
           </div>
 
-          <h1 className="max-w-5xl text-balance text-5xl font-semibold leading-[1.04] text-ink sm:text-6xl lg:text-8xl">
+          <h1 className="max-w-4xl text-balance text-[54px] font-semibold leading-none tracking-[-0.04em] text-ink sm:text-[64px] lg:text-[70px]">
             {activity.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-xl font-medium leading-8 text-slate-700 md:text-2xl">
+          <p className="mt-6 max-w-2xl text-xl font-semibold leading-8 text-ink md:text-2xl">
             {activity.subtitle}
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-olive">
             面向云计算、AI、开发者和校园招聘的项目实战挑战。用作品证明实力，拿 Offer，赢奖金。
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <CtaButton onClick={onSignup} className="sm:min-w-52">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <CtaButton onClick={onSignup} className="sm:min-w-44">
               <UploadCloud className="h-4 w-4" />
               {activity.primaryCta}
             </CtaButton>
-            <CtaButton href="#topics" variant="secondary" className="sm:min-w-48">
+            <CtaButton href="#topics" variant="secondary" className="sm:min-w-40">
               {activity.secondaryCta}
             </CtaButton>
           </div>
-        </div>
 
-        <div className="mt-12 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
-          {quickFacts.map((fact) => (
-            <div
-              key={fact.label}
-              className="group rounded-3xl border border-white/80 bg-white/70 p-5 shadow-card backdrop-blur transition hover:-translate-y-1 hover:border-blue-200"
-            >
-              <fact.icon className="mb-4 h-5 w-5 text-qblue" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-                {fact.label}
-              </p>
-              <p className="mt-2 text-lg font-semibold text-ink">{fact.value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="pointer-events-none absolute right-[8%] top-[18%] hidden w-[24rem] lg:block">
-        <div className="mission-panel float-slow">
-          <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-2xl bg-qblue text-white">
-              <Bot className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-ink">AI 实战任务栈</p>
-              <p className="text-xs text-slate-500">3D / LLM / Robot / Voice</p>
-            </div>
-          </div>
-          <div className="mt-6 space-y-3">
-            {['生成式 3D 模型', '角色扮演语音对话', '嵌入式智能小车'].map((item, index) => (
-              <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/80 p-3">
-                <span className="grid h-8 w-8 place-items-center rounded-xl bg-slate-100 text-sm font-bold text-qblue">
-                  {index + 1}
-                </span>
-                <span className="text-sm font-medium text-slate-700">{item}</span>
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {quickFacts.map((fact) => (
+              <div
+                key={fact.label}
+                className="rounded-[20px] border border-warmline bg-white p-4 transition hover:border-silver"
+              >
+                <fact.icon className="mb-3 h-5 w-5 text-qblue" />
+                <p className="text-xs font-semibold text-silver">{fact.label}</p>
+                <p className="mt-2 text-sm font-bold text-ink">{fact.value}</p>
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="hidden columns-2 gap-4 lg:block xl:columns-3">
+          {pinCards.map((card, index) => (
+            <article
+              key={`${card.title}-${card.caption}`}
+              className={`mb-4 break-inside-avoid rounded-[28px] border-[8px] border-white p-5 ${card.className}`}
+            >
+              <p className="text-[42px] font-semibold leading-none tracking-[-0.04em]">{card.title}</p>
+              <p className="mt-3 text-sm font-semibold leading-6 opacity-80">{card.caption}</p>
+              <span className="mt-5 inline-flex rounded-2xl bg-white/30 px-3 py-1 text-xs font-semibold">
+                Pin 0{index + 1}
+              </span>
+            </article>
+          ))}
         </div>
       </div>
 
       <a
         href="#highlights"
-        className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-medium text-slate-500 shadow-sm backdrop-blur transition hover:text-qblue md:flex"
+        className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-2xl bg-sand px-4 py-2 text-xs font-semibold text-olive transition hover:text-ink md:flex"
       >
         向下了解活动
-        <ArrowDown className="h-4 w-4 animate-bounce" />
+        <ArrowDown className="h-4 w-4" />
       </a>
     </section>
   )

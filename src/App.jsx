@@ -19,7 +19,7 @@ export default function App() {
   const closeSignup = () => setSignupOpen(false)
 
   return (
-    <div className="min-h-screen bg-white text-ink">
+    <div className="min-h-screen bg-[#fffdfa] text-ink">
       <Navbar onSignup={openSignup} />
       <main>
         <Hero onSignup={openSignup} />

@@ -14,7 +14,7 @@ export default function Timeline() {
         />
 
         <div className="relative">
-          <div className="absolute left-5 top-0 hidden h-full w-px bg-slate-200 md:block lg:left-1/2" />
+          <div className="absolute left-5 top-0 hidden h-full w-px bg-warmline md:block lg:left-1/2" />
           <div className="grid gap-5">
             {timeline.map((item, index) => (
               <Reveal key={item.step} delay={index * 60}>
@@ -23,17 +23,17 @@ export default function Timeline() {
                     index % 2 === 0 ? '' : 'lg:[&>*:first-child]:col-start-2'
                   }`}
                 >
-                  <article className="timeline-card rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <article className="timeline-card rounded-[28px] border border-warmline bg-warm p-5">
                     <div className="mb-5 flex items-center justify-between gap-4">
-                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ink text-sm font-bold text-white">
+                      <span className="grid h-12 w-12 place-items-center rounded-[20px] bg-qblue text-sm font-bold text-white">
                         {item.step}
                       </span>
-                      <span className="rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold text-qblue">
+                      <span className="rounded-2xl bg-white px-4 py-2 text-xs font-semibold text-qblue">
                         {item.time}
                       </span>
                     </div>
                     <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-500">{item.detail}</p>
+                    <p className="mt-3 text-sm leading-7 text-olive">{item.detail}</p>
                   </article>
                 </div>
               </Reveal>
