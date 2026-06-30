@@ -119,5 +119,5 @@ UI 设计师可通过本地预览地址或线上部署链接查看页面效果�
 - 使用 Git / GitHub 管理版本和协作记录。
 
 ## 截图展示
-![alt text](image/image.png)
 ![alt text](image/v2image_compressed.png)
+![alt text](image/image.png)
