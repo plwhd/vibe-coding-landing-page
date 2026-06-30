@@ -117,3 +117,7 @@ UI 设计师可通过本地预览地址或线上部署链接查看页面效果�
 - 页面组件放在 `src/components/`。
 - 页面数据放在 `src/data/`。
 - 使用 Git / GitHub 管理版本和协作记录。
+
+## 截图展示
+![alt text](image/image1_compressed.png)
+![alt text](image/image12_compressed.png)
